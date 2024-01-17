@@ -2,6 +2,7 @@ package entonos;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -50,6 +51,17 @@ class MetodosUtilesTest {
 		boolean condicion = MetodosUtiles.esPrimo(numero);
 		assertTrue(condicion);
 	}
+	
+	
+	
+	@ParameterizedTest
+		@ValueSource(ints = {16, 4, 6, 8, 10} )
+		void testNoPrimos(int numeroAComprobar) {
+			boolean comprobacion = MetodosUtiles.esPrimo(numeroAComprobar);
+			assertFalse(comprobacion);
+		}
+	
+	
 }
 
 
