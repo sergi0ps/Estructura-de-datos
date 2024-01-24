@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -61,6 +62,16 @@ class MetodosUtilesTest {
 			assertFalse(comprobacion);
 		}
 	
+	@RepeatedTest(10)
+	void testNumeroAleatorios() {
+		//establecemos un inicio, un final, calculamos  
+		int maximo = 32;
+		int minimo = 7;
+		
+		int aleatorio = MetodosUtiles.numeroAleatoriEntre(maximo, minimo);
+		boolean cumpleCondiciones = aleatorio >= minimo && aleatorio <= maximo && aleatorio%2 !=0;
+		assertEquals(true, cumpleCondiciones);
+	}
 	
 }
 

@@ -24,11 +24,43 @@ public class MetodosUtiles {
 		}
 		return true;
 	}
+
 	
-	public static int mcdDosNumeros(int numero1, int numero2) {
+	public static int numeroAleatoriEntre(int inicio, int fin) {
+		/*PRIMERA FORMA*/
+		//int aleatorio = (int)Math.floor(Math.random()*(fin-inicio)+inicio);
 		
-		for
+		//if(aleatorio%2 !=0) {
+			//return aleatorio;
+		//}
+		//if(aleatorio == inicio) {
+		//	return aleatorio + 1;
+		//}
+		//if(aleatorio == fin) {
+			//return aleatorio - 1;
+		//}
+		//return aleatorio-1;
+		
+		/*Segunda forma*/
+		
+		int aleatorio = (int)Math.floor(Math.random()*(fin-inicio)+inicio);
+		while(aleatorio%2 !=1) {
+			aleatorio = (int)Math.floor(Math.random()*(fin-inicio)+inicio);
+		}
+		
+		System.out.println(aleatorio);
+		return aleatorio;
+		
+		
+		
+		
+		
+		
+		
+		
 	}
+	
+	
 	
 	
 	
