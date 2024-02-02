@@ -29,8 +29,7 @@ public interface Cola<T> {
     // Método para obtener un array con los elementos de la cola
     Object[] toArray();
     
-    //Método que ordena utilizando el método de la burbuja
-    void bubbleSort();
+  
     
 
 }

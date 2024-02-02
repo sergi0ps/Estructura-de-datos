@@ -12,8 +12,9 @@ public class MiCola<T> implements Cola<T> {
 		for (int i = 0; i < cola.length; i++) {
 			if(cola[i] == null) {
 				cola[i] = elemento;
+				
 			}
-			
+			Object[]
 			
 		}
 		
@@ -60,11 +61,18 @@ public class MiCola<T> implements Cola<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public void bubbleSort() {
-		// TODO Auto-generated method stub
+	public String toString() {
+		StringBuffer str = new StringBuffer();
+		str.append("[");		
+		for (int i = 0; i < cola.length-1; i++) {
+			str.append(cola[i]);
+			if(i != cola.length-2) {
+				str.append(",");
+			}
+		}
+		str.append("]");
 		
+		return str.toString();
 	}
 
 }
