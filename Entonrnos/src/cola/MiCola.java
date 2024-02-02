@@ -9,15 +9,10 @@ public class MiCola<T> implements Cola<T> {
 
 	@Override
 	public void enqueue(T elemento) {
+		Object[] newCola = new Object[cola.length+1];
 		for (int i = 0; i < cola.length; i++) {
-			if(cola[i] == null) {
-				cola[i] = elemento;
-				
-			}
-			Object[]
 			
 		}
-		
 	}
 
 	@Override
