@@ -4,64 +4,94 @@ public class MiCola<T> implements Cola<T> {
 	Object[] cola;
 	
 	public MiCola() {
-		cola = new Object[1];
+		cola = new Object[0];
 	}
 
 	@Override
 	public void enqueue(T elemento) {
 		Object[] newCola = new Object[cola.length+1];
 		for (int i = 0; i < cola.length; i++) {
+			newCola[i]= cola[i];
 			
 		}
+		newCola[cola.length] = elemento;
+		
+		cola=newCola;
 	}
 
 	@Override
 	public T dequeue() {
-		// TODO Auto-generated method stub
-		return null;
+		if(cola.length == 0) {
+			return null;
+		}
+		
+		T numeroEliminado = (T) cola[0];
+		
+		Object[] nuevaCola = new Object[cola.length-1];
+		
+		for (int i = 1; i < cola.length; i++) {
+			nuevaCola[i] = cola[i];
+			
+		}
+		cola=nuevaCola;
+
+		return numeroEliminado;
 	}
 
 	@Override
 	public T head() {
-		// TODO Auto-generated method stub
-		return null;
+		 
+		return (T) cola[0];
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if(cola.length == 0) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return cola.length;
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		cola = new Object[0];
 		
 	}
 
 	@Override
 	public boolean contains(T elemento) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean contiene = false;
+		
+		for (int i = 0; i < cola.length; i++) {
+			if(cola[i].equals(elemento)) {
+				contiene = true;
+			}
+		}
+		
+		return contiene;
 	}
 
 	@Override
 	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		Object [] array = new Object[cola.length];
+		for (int i = 0; i < array.length; i++) {
+			array[i]=cola[i];
+		}
+		
+		return array;
 	}
 	public String toString() {
 		StringBuffer str = new StringBuffer();
 		str.append("[");		
-		for (int i = 0; i < cola.length-1; i++) {
+		for (int i = 0; i < cola.length; i++) {
 			str.append(cola[i]);
-			if(i != cola.length-2) {
+			if(i != cola.length-1) {
 				str.append(",");
 			}
 		}
