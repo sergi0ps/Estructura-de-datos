@@ -1,4 +1,4 @@
-package estructuraDatos;
+package es.juana.pila;
 
 public class PilaDAW<T> implements Pila<T> {
 

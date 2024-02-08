@@ -1,4 +1,4 @@
-package estructuraDatos;
+package es.juana.pila;
 
 import static org.junit.jupiter.api.Assertions.*;
 

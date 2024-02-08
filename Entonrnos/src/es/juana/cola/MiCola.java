@@ -1,4 +1,4 @@
-package cola;
+package es.juana.cola;
 
 public class MiCola<T> implements Cola<T> {
 	Object[] cola;

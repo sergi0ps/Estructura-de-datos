@@ -1,18 +1,18 @@
-package listaEnlazada;
+package es.juana.lnkd;
 
 public class LinkedListSergio <T> implements LinkedList<T> {
 	private Nodo <T> inicial;
 	@Override
 	public void add(T elemento) {
-        Nodo<T> nodoNuevo = new Nodo<T>(elemento);
+
         if (inicial == null) {
-            inicial = nodoNuevo;
+            inicial = new Nodo<T>(elemento);
         } else {
             Nodo<T> aux = inicial;
             while (aux.siguiente != null) {
                 aux = aux.siguiente;
             }
-            aux.siguiente = nodoNuevo;
+            aux.siguiente = new Nodo<T>(elemento);
         }
     }
 		
@@ -67,7 +67,16 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 	}
 	
 	public String toString() {
-		return null;
+		StringBuffer str = new StringBuffer();
+		str.append("[");
+		
+		Nodo<T> actual = inicial;
+		
+		while(actual.siguiente != null ) {
+			
+			str.append(actual)
+			
+		}
 		
 	}
 

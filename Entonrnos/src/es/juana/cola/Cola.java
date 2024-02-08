@@ -1,4 +1,4 @@
-package cola;
+package es.juana.cola;
 
 public interface Cola<T> {
 	

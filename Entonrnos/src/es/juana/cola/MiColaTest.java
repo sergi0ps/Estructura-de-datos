@@ -1,10 +1,10 @@
-package cola;
+package es.juana.cola;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import estructuraDatos.PilaDAW;
+import es.juana.pila.PilaDAW;
 
 class MiColaTest {
 

@@ -1,4 +1,4 @@
-package listaEnlazada;
+package es.juana.lnkd;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +8,10 @@ class TestLinkedList {
 
 	@Test
 	void testadd() {
-		Nodo <Integer> incial = new Nodo <Integer>();
+		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+		lista.add(7);
+		
+		assertEquals(7,7);
 	}
 
 

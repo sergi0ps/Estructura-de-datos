@@ -1,4 +1,4 @@
-package listaEnlazada;
+package es.juana.lnkd;
 
 public interface LinkedList<T> {
 	

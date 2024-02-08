@@ -1,4 +1,4 @@
-package estructuraDatos;
+package es.juana.pila;
 
 
 public interface Pila<T> {
