@@ -4,18 +4,19 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 	private Nodo <T> inicial;
 	@Override
 	public void add(T elemento) {
-		Nodo <T> nodoNuevo = new Nodo<T>(elemento);
-		if(inicial == null) {
-			inicial = nodoNuevo;
-		}
-		Nodo<T> aux = inicial;
-		while(inicial.siguiente !=null ) {
-			aux = aux.siguiente;
-		}
-			aux = nodoNuevo;
+        Nodo<T> nodoNuevo = new Nodo<T>(elemento);
+        if (inicial == null) {
+            inicial = nodoNuevo;
+        } else {
+            Nodo<T> aux = inicial;
+            while (aux.siguiente != null) {
+                aux = aux.siguiente;
+            }
+            aux.siguiente = nodoNuevo;
+        }
+    }
 		
-		
-	}
+
 
 	@Override
 	public void add(T elemento, int index) {

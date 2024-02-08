@@ -8,7 +8,7 @@ class TestLinkedList {
 
 	@Test
 	void testadd() {
-		
+		Nodo <Integer> incial = new Nodo <Integer>();
 	}
 
 
