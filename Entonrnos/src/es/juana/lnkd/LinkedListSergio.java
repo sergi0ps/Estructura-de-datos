@@ -56,8 +56,21 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 
 	@Override
 	public T remove(int index) {
+		int contador = 1; 
+		Nodo<T> posicion = inicial;
+		if(index == 0) {
+			inicial = inicial.siguiente ;
+		}else {
+			while(contador != index && posicion.siguiente != null) {
+			posicion = posicion.siguiente;
+			contador++;
+		}
+		}
 		
-		return null;
+		T eliminado = posicion.getValor();
+		posicion.siguiente = posicion.siguiente.siguiente;
+		
+		return eliminado;
 		
 	}
 
@@ -90,7 +103,7 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		inicial = null;
 		
 	}
 
