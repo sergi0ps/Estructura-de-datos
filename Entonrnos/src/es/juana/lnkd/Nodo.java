@@ -6,7 +6,7 @@ public class Nodo<T>{
 	protected Nodo<T> siguiente;
 	
 	
-	
+	 
 	
 	public Nodo(T valor) {
 		this.siguiente = null;
