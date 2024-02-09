@@ -53,7 +53,7 @@ class TestLinkedList {
 		
 		assertEquals("[7,3,5,4,9,8]", lista.toString());
 	}
-	@Test 
+	/*@Test 
 	void testRemovePosicionCualquiera() {
 		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
 		lista.add(7);
@@ -66,6 +66,21 @@ class TestLinkedList {
 		lista.remove(0);
 		
 		assertEquals("[3,4,9]", lista.toString());
+	}*/
+	
+	@Test 
+	void testRemovePosicionCualquiera() {
+		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+		lista.add(7);
+		lista.add(3);
+		lista.add(4);
+		lista.add(9);
+	
+		assertEquals("[7,3,4,9]", lista.toString());
+		
+		lista.remove(4);
+		
+		assertEquals("[7,3,9]", lista.toString());
 	}
 	
 	
@@ -106,6 +121,9 @@ class TestLinkedList {
 		
 		assertEquals("[]", lista.toString());
 	}
+	
+	
+	
 
 
 }

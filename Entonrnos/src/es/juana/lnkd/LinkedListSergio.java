@@ -54,7 +54,7 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 		
 	}
 
-	@Override
+	/*@Override
 	public T remove(int index) {
 		int contador = 1; 
 		Nodo<T> posicion = inicial;
@@ -72,11 +72,12 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 		
 		return eliminado;
 		
-	}
+	}*/
 
 	@Override
 	public void remove(T elemento) {
-		// TODO Auto-generated method stub
+	
+		
 		
 	}
 
