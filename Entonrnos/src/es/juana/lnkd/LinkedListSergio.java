@@ -54,7 +54,7 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 		
 	}
 
-	/*@Override
+	@Override
 	public T remove(int index) {
 		int contador = 1; 
 		Nodo<T> posicion = inicial;
@@ -72,18 +72,36 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 		
 		return eliminado;
 		
-	}*/
+	}
 
 	@Override
 	public void remove(T elemento) {
+		Nodo <T> posicion = inicial;
+		if(inicial == null) {
+			System.out.println("Error");
+		}
+		
+		else if(inicial.getValor().equals(elemento)) {
+			inicial = inicial.siguiente;
+		}
+		
+		else {
+			while(posicion.siguiente != null && !posicion.siguiente.getValor().equals(elemento)) {
+				posicion = posicion.siguiente;
+			}
+			posicion.siguiente = posicion.siguiente.siguiente;
+		}
 	
+		
 		
 		
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if(inicial == null) {
+			return true;
+		}
 		return false;
 	}
 
@@ -110,7 +128,18 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 
 	@Override
 	public boolean contains(T elemento) {
-		// TODO Auto-generated method stub
+		Nodo<T> posicion = inicial;
+		if(inicial == elemento) {
+			return true;
+		}
+		
+		while(posicion.siguiente != null) {
+			if(posicion.getValor().equals(posicion)) {
+				return true;
+			}
+			posicion = posicion.siguiente;
+		}
+	
 		return false;
 	}
 
@@ -140,5 +169,9 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 		str.append("]");
 		return str.toString(); 		
 	}
+
+
+
+	
 
 }

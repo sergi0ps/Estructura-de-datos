@@ -70,19 +70,31 @@ class TestLinkedList {
 	
 	@Test 
 	void testRemovePosicionCualquiera() {
-		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
-		lista.add(7);
-		lista.add(3);
-		lista.add(4);
-		lista.add(9);
+		LinkedListSergio <String> lista = new LinkedListSergio<String>();
+		lista.add("A");
+		lista.add("B");
+		lista.add("C");
+		lista.add("D");
 	
-		assertEquals("[7,3,4,9]", lista.toString());
+		assertEquals("[A,B,C,D]", lista.toString());
 		
-		lista.remove(4);
+		lista.remove("A");
+		assertEquals("[B,C,D]", lista.toString());
+	}
+	@Test
+	void testIsEmpty() {
+		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
 		
-		assertEquals("[7,3,9]", lista.toString());
+		
+		assertTrue(lista.isEmpty());
 	}
 	
+	@Test
+	void testIsNotEmpty() {
+		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+		lista.add(34);
+		assertFalse(lista.isEmpty());
+	}
 	
 	
 	@Test
