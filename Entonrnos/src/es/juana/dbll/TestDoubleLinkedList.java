@@ -9,8 +9,8 @@ import es.juana.lnkd.LinkedListSergio;
 public class TestDoubleLinkedList {
 	
 	@Test
-	public void testAdd1() {
-		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+		void testAdd1() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
 		
 		lista.add(7);
 		
@@ -18,8 +18,8 @@ public class TestDoubleLinkedList {
 	}
 	
 	@Test
-	public void testAdd2() {
-		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+		void testAdd2() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
 		
 		lista.add(7);
 		lista.add(6);
@@ -27,4 +27,37 @@ public class TestDoubleLinkedList {
 		
 		assertEquals("[7,6,5]", lista.toString());
 	}
+	
+	@Test
+		void testAddDos() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
+		
+		lista.add(7);
+		lista.add(6);
+		lista.add(5);
+		lista.add(3, 0);
+		assertEquals("[3,7,6,5]", lista.toString());
+	}
+	
+	@Test
+		void testSiezeConCosas() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
+		
+		lista.add(7);
+		lista.add(6);
+		lista.add(5);
+		lista.add(3);
+		
+		
+		assertEquals(4, lista.size());
+	}
+	@Test
+		void testSiezeSinCosas() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
+		
+
+		
+		
+		assertEquals(0, lista.size());
+}
 }

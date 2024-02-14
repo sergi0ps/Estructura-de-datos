@@ -1,5 +1,7 @@
 package es.juana.dbll;
 
+
+
 public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 	
 	private Nodo <T> head;
@@ -12,19 +14,25 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 		if(head == null && tail == null) {
 			head = nuevo;
 			tail = nuevo;
+		}else {
+			tail.siguiente = nuevo;
+			nuevo.anterior = tail;
+			tail = nuevo;
 		}
 		
-		Nodo<T>p1 = head;
-		while(p1.siguiente != null ) {
-			p1 = p1.siguiente;
-			
-		}
-		p1.siguiente = nuevo;
+		
 	}
 
 	@Override
 	public void add(T elemento, int index) {
-		// TODO Auto-generated method stub
+		if (index == 0 ) {
+			Nodo<T> n = head;
+			head = new Nodo<T>(elemento);
+			head.siguiente = n;
+		}else{
+			
+		}
+		
 		
 	}
 	
@@ -55,9 +63,19 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		if(head == null) {
+			return 0;
+		}else {
+			int contador=1;
+            Nodo<T> aux = head;
+            while (aux.siguiente != null) {
+                aux = aux.siguiente;
+                contador ++;
+            }
+            return contador;
+        }
 	}
+	
 
 	@Override
 	public void clear() {
