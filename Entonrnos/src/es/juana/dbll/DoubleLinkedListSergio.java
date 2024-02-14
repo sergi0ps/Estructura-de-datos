@@ -1,8 +1,7 @@
 package es.juana.dbll;
 
-import es.juana.lnkd.Nodo;
-
 public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
+	
 	private Nodo <T> head;
 	private Nodo <T> tail;
 
@@ -70,11 +69,11 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 		while(actual != null ) {
 			
 			str.append(actual.getValor());
-			if(actual.sigu != null) {
+			if(actual.siguiente != null) {
 				str.append(",");
 			}
 			
-			actual = actual.;
+			actual = actual.siguiente;
 			
 		}
 		str.append("]");
