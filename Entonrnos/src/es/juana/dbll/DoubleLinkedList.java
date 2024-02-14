@@ -7,6 +7,9 @@ public interface DoubleLinkedList<T> {
     
     // Método para insertar un elemento en la lista en una posición determinada (la primera es la 0)
     void add(T elemento, int index);
+    
+    // Metodo que devuelva un elemento de una posicion concreta. Empieza en 0.
+    T get (int index);
 
     // Método que elimna y devuelve el elemento que ocupe una posición determinada
     T remove(int index);

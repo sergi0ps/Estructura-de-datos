@@ -7,8 +7,19 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 
 	@Override
 	public void add(T elemento) {
-		// TODO Auto-generated method stub
+		Nodo<T> nuevo = new Nodo<T>(elemento);
 		
+		if(head == null && tail == null) {
+			head = nuevo;
+			tail = nuevo;
+		}
+		
+		Nodo<T>p1 = head;
+		while(p1.siguiente != null ) {
+			p1 = p1.siguiente;
+			
+		}
+		p1.siguiente = nuevo;
 	}
 
 	@Override
@@ -16,6 +27,13 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public T get(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 
 	@Override
 	public T remove(int index) {
@@ -79,5 +97,6 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 		str.append("]");
 		return str.toString(); 		
 	}
-	
+
+
 }
