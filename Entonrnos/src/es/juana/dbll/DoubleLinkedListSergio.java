@@ -12,14 +12,13 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 		if(head == null && tail == null) {
 			head = nuevo;
 			tail = nuevo;
+		}else {
+			tail.siguiente = nuevo;
+			nuevo.anterior = tail;
+			tail = nuevo;
 		}
 		
-		Nodo<T>p1 = head;
-		while(p1.siguiente != null ) {
-			p1 = p1.siguiente;
-			
-		}
-		p1.siguiente = nuevo;
+		
 	}
 
 	@Override

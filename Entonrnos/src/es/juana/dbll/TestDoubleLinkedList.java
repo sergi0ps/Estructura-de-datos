@@ -9,22 +9,22 @@ import es.juana.lnkd.LinkedListSergio;
 public class TestDoubleLinkedList {
 	
 	@Test
-	public void testAdd1() {
-		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
+	void testAdd1() {
+		DoubleLinkedListSergio <Integer> lista = new DoubleLinkedListSergio<Integer>();
 		
 		lista.add(7);
-		
 		assertEquals("[7]", lista.toString());
 	}
 	
 	@Test
-	public void testAdd2() {
-		LinkedListSergio <Integer> lista = new LinkedListSergio<Integer>();
-		
+	void testAdd2() {
+		DoubleLinkedListSergio <Integer> lista = new DoubleLinkedListSergio<Integer>();
 		lista.add(7);
-		lista.add(6);
-		lista.add(5);
+		lista.add(2);
+		lista.add(3);
+		lista.add(8);	
 		
-		assertEquals("[7,6,5]", lista.toString());
+		assertEquals("[7,2,3,8]", lista.toString());
 	}
+	
 }
