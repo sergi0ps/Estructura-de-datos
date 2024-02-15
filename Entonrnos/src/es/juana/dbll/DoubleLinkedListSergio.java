@@ -17,8 +17,6 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 			nuevo.anterior = tail;
 			tail = nuevo;
 		}
-		
-		
 	}
 
 	@Override
