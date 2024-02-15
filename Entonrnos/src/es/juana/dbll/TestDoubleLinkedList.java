@@ -25,9 +25,9 @@ public class TestDoubleLinkedList {
 		lista.add(7);
 		lista.add(2);
 		lista.add(3);
-		lista.add(8);	
+		lista.add(88);	
 
-		assertEquals("[7,2,3,8]", lista.toString());
+		assertEquals("[7,2,3,88]", lista.toString());
 	}
 
 	@Test
