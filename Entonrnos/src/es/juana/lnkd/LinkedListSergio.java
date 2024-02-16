@@ -41,7 +41,7 @@ public class LinkedListSergio <T> implements LinkedList<T> {
 			posicion.siguiente = adios;
 			
 		}else {
-			int contador = 1;
+			int contador = 1; 
 			Nodo<T> posicion = inicial;
 			Nodo<T> nuevo = new Nodo<T>(elemento);
 			while(contador != index) {

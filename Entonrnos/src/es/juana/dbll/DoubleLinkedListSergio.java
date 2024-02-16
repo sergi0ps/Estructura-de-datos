@@ -1,6 +1,6 @@
 package es.juana.dbll;
 
-
+import javax.swing.text.Position;
 
 public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 	
@@ -28,32 +28,93 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 			head.anterior = nuevo;
 			nuevo.siguiente = head;
 			head = nuevo;
+		}else if(index == size()) {
+			add(elemento);
+		}else {
+			int contador = 1;
+			Nodo<T> posicion = head;
+			while(contador != index) {
+				posicion = posicion.siguiente;
+				contador++;
+			}
+			posicion.siguiente.anterior = nuevo;
+			nuevo.siguiente = posicion.siguiente;
+			nuevo.anterior= posicion;
+			posicion.siguiente = nuevo;
+			
 		}
 		
 	}
 	
 	@Override
 	public T get(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		Nodo<T> posicion = head;
+		int contador = 1;
+		
+		while(contador != index) {
+			posicion = posicion.siguiente;
+			contador++;
+		}
+		return posicion.getValor();
+	
 	}
 	
 
 	@Override
 	public T remove(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		T objeto;
+		if(index == 0) {
+			objeto = head.getValor();
+			head = head.siguiente;
+			
+		}else if(index == size()-1) {
+			objeto = tail.getValor();
+			tail.anterior.siguiente = null;
+			tail = tail.anterior;
+			
+		}else {
+			int contador = 1;
+			Nodo<T> posicion = head;
+			while(contador <= index) {
+				posicion = posicion.siguiente;
+				contador++;
+			}
+			objeto = posicion.getValor();
+			posicion.anterior.siguiente = posicion.siguiente;
+			posicion.siguiente.anterior = posicion.anterior;
+			
+		}
+		
+		
+		return objeto;
 	}
 
 	@Override
 	public void remove(T elemento) {
-		// TODO Auto-generated method stub
+		if(head.getValor() == elemento) {
+			head = head.siguiente;
+		}else if(tail.getValor() == elemento) {
+			tail.anterior.siguiente = null;
+			tail = tail.anterior;
+		}else {
+			Nodo <T> posicion = head;
+			while(posicion.getValor() != elemento) {
+				posicion = posicion.siguiente;
+			}
+			posicion.anterior.siguiente = posicion.siguiente;
+			posicion.siguiente.anterior = posicion.anterior;
+			
+		}
+		
 		
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if(head == null) {
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -75,7 +136,7 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		head = null ;
 		
 	}
 
