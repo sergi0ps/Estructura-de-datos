@@ -209,5 +209,34 @@ public class TestDoubleLinkedList {
 
 	}
 	
+	@Test
+	void testContainsInicial() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
+
+		lista.add(7);
+		lista.add(6);
+		lista.add(5);
+		lista.add(3);
+		
+		
+		assertTrue(lista.contains(7));
+	}
+	
+	@Test
+	void testContainsFinal() {
+		DoubleLinkedListSergio<Integer> lista = new DoubleLinkedListSergio<Integer>();
+
+		lista.add(7);
+		lista.add(6);
+		lista.add(5);
+		lista.add(3);
+		
+		
+		assertTrue(lista.contains(3));
+	}
+
+
+
+
 
 }

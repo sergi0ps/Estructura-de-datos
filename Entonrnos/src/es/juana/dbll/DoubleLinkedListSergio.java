@@ -142,9 +142,19 @@ public class DoubleLinkedListSergio<T> implements DoubleLinkedList<T> {
 
 	@Override
 	public boolean contains(T elemento) {
-		// TODO Auto-generated method stub
+		if(head == elemento || tail.equals(elemento)) {
+			return true;
+		}else {
+			Nodo<T> posicion = head;
+			while(posicion != null) {
+				if(posicion.getValor().equals(elemento)) {
+					return true;
+				}
+				posicion = posicion.siguiente;
+			}
+		}
 		return false;
-	}
+	} 
 
 	@Override
 	public Object[] toArray() {
